@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/add-base-url: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    ingress.kubernetes.io/ssl-redirect: "false"
+  name: quack-ingress # Asignar nombre a conveniencia
+  namespace: quack # Requerido
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "quack.desarrollo.cl" # Asignar nombre de dominio a conveniencia
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quack # Nombre del servicio
+            port:
+              number: 9090 # Puerto de ejecución de taiga

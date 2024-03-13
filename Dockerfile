@@ -3,7 +3,7 @@
 #
 
 # Pull base image.
-FROM openjdk:8u212-slim-stretch
+FROM ibm-semeru-runtimes:open-8-jdk-jammy
 
 #Application
 RUN mkdir -p /usr/quack
