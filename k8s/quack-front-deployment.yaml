@@ -24,6 +24,7 @@ spec:
       containers:
         - image: rycdevops/quack:1.0
           name: quack-front
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
               protocol: TCP
