@@ -6,7 +6,7 @@ metadata:
     kompose.version: 1.32.0 (765fde254)
   labels:
     io.kompose.service: mongod
-  name: mongod
+  name: quack-db
 spec:
   replicas: 1
   selector:
@@ -23,8 +23,15 @@ spec:
     spec:
       containers:
         - image: mongo:5
-          name: mongod
+          name: quack-db
+          volumeMounts:
+            - mountPath: /data/db
+              name: quack-db-data
           ports:
             - containerPort: 27017
               protocol: TCP
       restartPolicy: Always
+      volumes:
+        - name: quack-db-data
+          persistentVolumeClaim:
+            claimName: quack-db-data
