@@ -1,9 +1,14 @@
-QuAck
+QuAck - RyC
 ==========
 
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/testquack/community)
+Version modificada del Web Base Test Management System para su uso en RyC
 
-[Source Code on GitHub](https://github.com/greatbit/quack)
+---
+
+## Compilación
+Compilar `quake system`, compile -> package
+
+---
 
 QuAck is an open-source test management service. 
 It allows to store testcases and test suites and execute them.

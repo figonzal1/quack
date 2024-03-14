@@ -22,7 +22,7 @@ spec:
         io.kompose.service: quack
     spec:
       containers:
-        - image: figonzal/quack:1.1
+        - image: rycdevops/quack:1.0
           name: quack-front
           ports:
             - containerPort: 80
